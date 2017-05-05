@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Pastel
 
 class ViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton! {
