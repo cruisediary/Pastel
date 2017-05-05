@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PastelView: UIView {
+public class PastelView: UIView {
 
     struct Animation {
         static let keyPath = "colors"
@@ -34,19 +34,19 @@ class PastelView: UIView {
     }
     */
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
-    override func awakeFromNib() {
+    public override func awakeFromNib() {
         super.awakeFromNib()
     }
     
-    func startAnimation() {
+    public func startAnimation() {
         gradient.removeAllAnimations()
         setup()
         animateGradient()
@@ -68,12 +68,12 @@ class PastelView: UIView {
                 colors[(currentGradient + 1) % colors.count].cgColor]
     }
     
-    func setColors(colors: [UIColor]) {
+    public func setColors(colors: [UIColor]) {
         guard colors.count > 0 else { return }
         self.colors = colors
     }
     
-    func addColor(color: UIColor) {
+    public func addColor(color: UIColor) {
         self.colors.append(color)
     }
     
@@ -88,7 +88,7 @@ class PastelView: UIView {
         gradient.add(animation, forKey: Animation.key)
     }
     
-    override func removeFromSuperview() {
+    public override func removeFromSuperview() {
         super.removeFromSuperview()
         gradient.removeAllAnimations()
         gradient.removeFromSuperlayer()
@@ -96,7 +96,7 @@ class PastelView: UIView {
 }
 
 extension PastelView: CAAnimationDelegate {
-    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+    public func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         if flag {
             gradient.colors = currentGradientSet()
             animateGradient()
