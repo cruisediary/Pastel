@@ -11,10 +11,23 @@ Instagram like Gradient background animation
 ![pastel_03.gif](README/Pastel_03.gif)
 
 ## Example
+```swift
+override func viewDidLoad() {
+    super.viewDidLoad()
+
+    let pastelView = PastelView(frame: view.bounds)
+    pastelView.setColors(colors: [.blue, .white, .black]) // set custom colors
+    pastelView.addColor(color: .red)
+    pastelView.animationDuration = 2.5
+    pastelView.startAnimation()
+    view.insertSubview(pastelView, at: 0)
+}
+```
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
+Pastel is written in Swift 3. iOS 8.0+ Required
 
 ## Installation
 
