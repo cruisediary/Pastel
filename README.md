@@ -6,9 +6,9 @@ Instagram like Gradient background animation
 [![License](https://img.shields.io/cocoapods/l/Pastel.svg?style=flat)](http://cocoapods.org/pods/Pastel)
 [![Platform](https://img.shields.io/cocoapods/p/Pastel.svg?style=flat)](http://cocoapods.org/pods/Pastel)
 
-![pastel_01.gif](README/pastel_01.gif)
-![pastel_02.gif](README/pastel_02.gif)
-![pastel_03.gif](README/pastel_03.gif)
+![pastel_01.gif](README/Pastel_01.gif)
+![pastel_02.gif](README/Pastel_02.gif)
+![pastel_03.gif](README/Pastel_03.gif)
 
 ## Example
 
