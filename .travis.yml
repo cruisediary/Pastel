@@ -13,7 +13,6 @@ xcode_sdk: iphonesimulator8.4
 # - gem install cocoapods # Since Travis is not always on latest version
 # - pod install --project-directory=Example
 script:
-- set -o pipefail && xcodebuild test -workspace Example/Pastel.xcworkspace -scheme Pastel-Example -sdk iphonesimulator9.3 ONLY_ACTIVE_ARCH=NO | xcpretty
 - pod lib lint
-- xcodebuild -scheme 'Pastel-iOS' -sdk iphonesimulator CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO test | xcpretty -c
-- xcodebuild -scheme 'Pastel-OSX' test | xcpretty -c
+- xcodebuild -scheme 'Pastel' -sdk iphonesimulator CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO test | xcpretty -c
+
