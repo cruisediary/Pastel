@@ -10,15 +10,47 @@ import UIKit
 
 public class PastelView: UIView {
 
-    struct Animation {
+    private struct Animation {
         static let keyPath = "colors"
         static let key = "ColorChange"
     }
     
-    let gradient = CAGradientLayer()
-    var currentGradient: Int = 0
+    public enum Point {
+        case left
+        case top
+        case right
+        case bottom
+        case topLeft
+        case topRight
+        case bottomLeft
+        case bottomRight
+        case custom(position: CGPoint)
+        
+        var point: CGPoint {
+            switch self {
+            case .left: return CGPoint(x: 0.0, y: 0.5)
+            case .top: return CGPoint(x: 0.5, y: 0.0)
+            case .right: return CGPoint(x: 1.0, y: 0.5)
+            case .bottom: return CGPoint(x: 0.5, y: 1.0)
+            case .topLeft: return CGPoint(x: 0.0, y: 0.0)
+            case .topRight: return CGPoint(x: 1.0, y: 0.0)
+            case .bottomLeft: return CGPoint(x: 0.0, y: 1.0)
+            case .bottomRight: return CGPoint(x: 1.0, y: 1.0)
+            case .custom(let point):
+                return point
+            }
+        }
+    }
+    
+    // Custom Direction
+    open var startPoint: Point = .topRight
+    open var endPoint: Point = .bottomLeft
+    
+    // Custom Duration
     open var animationDuration: TimeInterval = 5.0
     
+    private let gradient = CAGradientLayer()
+    private var currentGradient: Int = 0
     private var colors: [UIColor] = [UIColor(red: 156/255, green: 39/255, blue: 176/255, alpha: 1.0),
                              UIColor(red: 255/255, green: 64/255, blue: 129/255, alpha: 1.0),
                              UIColor(red: 123/255, green: 31/255, blue: 162/255, alpha: 1.0),
@@ -55,8 +87,8 @@ public class PastelView: UIView {
     fileprivate func setup() {
         gradient.frame = bounds
         gradient.colors = currentGradientSet()
-        gradient.startPoint = CGPoint(x:0, y:1)
-        gradient.endPoint = CGPoint(x:1, y:0)
+        gradient.startPoint = startPoint.point
+        gradient.endPoint = endPoint.point
         gradient.drawsAsynchronously = true
         
         layer.insertSublayer(gradient, at: 0)
