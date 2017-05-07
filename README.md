@@ -2,7 +2,7 @@
 Instagram like Gradient background animation
 
 ![Swift](https://img.shields.io/badge/Swift-3.0-orange.svg)
-[![CI Status](http://img.shields.io/travis/cruz/Pastel.svg?style=flat)](https://travis-ci.org/cruisediary/Pastel)
+[![CI Status](http://img.shields.io/travis/cruisediary/Pastel.svg?style=flat)](https://travis-ci.org/cruisediary/Pastel)
 [![Version](https://img.shields.io/cocoapods/v/Pastel.svg?style=flat)](http://cocoapods.org/pods/Pastel)
 [![License](https://img.shields.io/cocoapods/l/Pastel.svg?style=flat)](http://cocoapods.org/pods/Pastel)
 [![Platform](https://img.shields.io/cocoapods/p/Pastel.svg?style=flat)](http://cocoapods.org/pods/Pastel)
