@@ -49,7 +49,7 @@ public class PastelView: UIView {
     // Custom Duration
     open var animationDuration: TimeInterval = 5.0
     
-    private let gradient = CAGradientLayer()
+    fileprivate let gradient = CAGradientLayer()
     private var currentGradient: Int = 0
     private var colors: [UIColor] = [UIColor(red: 156/255, green: 39/255, blue: 176/255, alpha: 1.0),
                              UIColor(red: 255/255, green: 64/255, blue: 129/255, alpha: 1.0),
