@@ -40,9 +40,8 @@ override func viewDidLoad() {
 ```
 
 ## 🎨 Customize Graident Colors
+#### Designed by Alexander Zaytsev, https://dribbble.com/anwaltzzz
 ![Gradient.png](README/Gradient.png)
-#### Made by Alexander Zaytsev
-#### dribbble.com/anwaltzzz
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
