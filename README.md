@@ -1,5 +1,5 @@
 # Pastel
-Instagram like Gradient background animation
+🎨 Gradient animation effect like Instagram
 
 ![Swift](https://img.shields.io/badge/Swift-3.0-orange.svg)
 [![CI Status](http://img.shields.io/travis/cruisediary/Pastel.svg?style=flat)](https://travis-ci.org/cruisediary/Pastel)
@@ -38,6 +38,11 @@ override func viewDidLoad() {
     view.insertSubview(pastelView, at: 0)
 }
 ```
+
+## 🎨 Customize Graident Colors
+![Gradient.png](README/Gradient.png)
+#### Made by Alexander Zaytsev
+#### dribbble.com/anwaltzzz
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
