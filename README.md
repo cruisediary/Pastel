@@ -6,6 +6,7 @@
 [![Version](https://img.shields.io/cocoapods/v/Pastel.svg?style=flat)](http://cocoapods.org/pods/Pastel)
 [![License](https://img.shields.io/cocoapods/l/Pastel.svg?style=flat)](http://cocoapods.org/pods/Pastel)
 [![Platform](https://img.shields.io/cocoapods/p/Pastel.svg?style=flat)](http://cocoapods.org/pods/Pastel)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 ![pastel_01.gif](README/Pastel_01.gif)
 ![pastel_02.gif](README/Pastel_02.gif)
@@ -53,8 +54,14 @@ Pastel is written in Swift 3. iOS 8.0+ Required
 Pastel is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
+### Cocoapods
 ```ruby
 pod "Pastel"
+```
+
+### Carthage
+```
+github "cruisediary/Pastel" ~> 0.2.1
 ```
 
 ## Author
