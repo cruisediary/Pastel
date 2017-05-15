@@ -77,6 +77,11 @@ public class PastelView: UIView {
     public override func awakeFromNib() {
         super.awakeFromNib()
     }
+
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        gradient.frame = bounds
+    }
     
     public func startAnimation() {
         gradient.removeAllAnimations()
