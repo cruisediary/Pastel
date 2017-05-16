@@ -51,8 +51,7 @@ Pastel is written in Swift 3. iOS 8.0+ Required
 
 ## Installation
 
-Pastel is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+Pastel is available through [CocoaPods](http://cocoapods.org) or [Carthage](https://github.com/Carthage/Carthage).
 
 ### Cocoapods
 ```ruby
