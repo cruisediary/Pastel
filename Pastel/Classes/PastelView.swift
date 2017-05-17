@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class PastelView: UIView {
+open class PastelView: UIView {
 
     private struct Animation {
         static let keyPath = "colors"
@@ -74,11 +74,11 @@ public class PastelView: UIView {
         super.init(coder: aDecoder)
     }
     
-    public override func awakeFromNib() {
+    open override func awakeFromNib() {
         super.awakeFromNib()
     }
 
-    public override func layoutSubviews() {
+    open override func layoutSubviews() {
         super.layoutSubviews()
         gradient.frame = bounds
     }
@@ -125,7 +125,7 @@ public class PastelView: UIView {
         gradient.add(animation, forKey: Animation.key)
     }
     
-    public override func removeFromSuperview() {
+    open override func removeFromSuperview() {
         super.removeFromSuperview()
         gradient.removeAllAnimations()
         gradient.removeFromSuperlayer()
