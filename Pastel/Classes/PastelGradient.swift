@@ -8,7 +8,7 @@
 
 import UIKit
 
-@objc enum PastelGradient: Int {
+@objc public enum PastelGradient: Int {
     case warmFlame
     case nightFade
     case springWarmth
