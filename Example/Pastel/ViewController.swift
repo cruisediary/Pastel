@@ -30,6 +30,7 @@ class ViewController: UIViewController {
         pastelView.animationDuration = 3.0
         
         // Custom Color
+        
         pastelView.setColors([UIColor(red: 156/255, green: 39/255, blue: 176/255, alpha: 1.0),
                               UIColor(red: 255/255, green: 64/255, blue: 129/255, alpha: 1.0),
                               UIColor(red: 123/255, green: 31/255, blue: 162/255, alpha: 1.0),
