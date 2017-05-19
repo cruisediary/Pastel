@@ -40,7 +40,7 @@ override func viewDidLoad() {
 }
 ```
 
-## 🎨 Customize Graident Colors
+## 🎨 Customize Gradient Colors
 #### Designed by Alexander Zaytsev, https://dribbble.com/anwaltzzz
 ![Gradient.png](README/Gradient.png)
 
