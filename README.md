@@ -63,6 +63,9 @@ pod "Pastel"
 github "cruisediary/Pastel" ~> 0.3.0
 ```
 
+## Example
+- [Passcode](https://github.com/cruisediary/Passcode): A simple Passcode application using RxSwift, ReactorKit, IGListKit with Pastel
+
 ## Author
 
 cruz, cruzdiary@gmail.com
