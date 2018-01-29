@@ -1,7 +1,7 @@
 # Pastel
 🎨 Gradient animation effect like Instagram
 
-![Swift](https://img.shields.io/badge/Swift-3.0-orange.svg)
+![Swift](https://img.shields.io/badge/Swift-4.0-orange.svg)
 [![CI Status](http://img.shields.io/travis/cruisediary/Pastel.svg?style=flat)](https://travis-ci.org/cruisediary/Pastel)
 [![Version](https://img.shields.io/cocoapods/v/Pastel.svg?style=flat)](http://cocoapods.org/pods/Pastel)
 [![License](https://img.shields.io/cocoapods/l/Pastel.svg?style=flat)](http://cocoapods.org/pods/Pastel)
@@ -47,7 +47,7 @@ override func viewDidLoad() {
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
-Pastel is written in Swift 3. iOS 8.0+ Required
+Pastel is written in Swift 4. iOS 10.0+ Required
 
 ## Installation
 
@@ -60,7 +60,7 @@ pod "Pastel"
 
 ### Carthage
 ```
-github "cruisediary/Pastel" ~> 0.3.0
+github "cruisediary/Pastel" ~> 0.4.0
 ```
 
 ## Example
