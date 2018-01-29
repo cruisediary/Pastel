@@ -14,6 +14,8 @@
 		4CADB8DC1EC852F700873CC9 /* PastelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CADB8D81EC852F700873CC9 /* PastelView.swift */; };
 		4CADB8DD1EC852F700873CC9 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 4CADB8DA1EC852F700873CC9 /* .gitkeep */; };
 		4CBCC0B71ECDE0F600B8522C /* PastelGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBCC0B61ECDE0F600B8522C /* PastelGradient.swift */; };
+		50FD0037201FD1C90076A8B6 /* PastelPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FD0035201FD1C90076A8B6 /* PastelPoint.swift */; };
+		50FD0038201FD1C90076A8B6 /* PastelLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FD0036201FD1C90076A8B6 /* PastelLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +39,8 @@
 		4CADB8D81EC852F700873CC9 /* PastelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastelView.swift; sourceTree = "<group>"; };
 		4CADB8DA1EC852F700873CC9 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		4CBCC0B61ECDE0F600B8522C /* PastelGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastelGradient.swift; sourceTree = "<group>"; };
+		50FD0035201FD1C90076A8B6 /* PastelPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastelPoint.swift; sourceTree = "<group>"; };
+		50FD0036201FD1C90076A8B6 /* PastelLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastelLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,10 +83,10 @@
 		4C8BD1BE1EC851DA00E0BACF /* Pastel */ = {
 			isa = PBXGroup;
 			children = (
-				4CADB8D61EC852F700873CC9 /* Classes */,
 				4CADB8D91EC852F700873CC9 /* Assets */,
-				4C8BD1BF1EC851DA00E0BACF /* Pastel.h */,
+				4CADB8D61EC852F700873CC9 /* Classes */,
 				4C8BD1C01EC851DA00E0BACF /* Info.plist */,
+				4C8BD1BF1EC851DA00E0BACF /* Pastel.h */,
 			);
 			path = Pastel;
 			sourceTree = "<group>";
@@ -90,8 +94,8 @@
 		4C8BD1C91EC851DA00E0BACF /* PastelTests */ = {
 			isa = PBXGroup;
 			children = (
-				4C8BD1CA1EC851DA00E0BACF /* PastelTests.swift */,
 				4C8BD1CC1EC851DA00E0BACF /* Info.plist */,
+				4C8BD1CA1EC851DA00E0BACF /* PastelTests.swift */,
 			);
 			path = PastelTests;
 			sourceTree = "<group>";
@@ -100,8 +104,10 @@
 			isa = PBXGroup;
 			children = (
 				4CADB8D71EC852F700873CC9 /* .gitkeep */,
-				4CADB8D81EC852F700873CC9 /* PastelView.swift */,
 				4CBCC0B61ECDE0F600B8522C /* PastelGradient.swift */,
+				50FD0036201FD1C90076A8B6 /* PastelLabel.swift */,
+				50FD0035201FD1C90076A8B6 /* PastelPoint.swift */,
+				4CADB8D81EC852F700873CC9 /* PastelView.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -226,6 +232,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50FD0037201FD1C90076A8B6 /* PastelPoint.swift in Sources */,
+				50FD0038201FD1C90076A8B6 /* PastelLabel.swift in Sources */,
 				4CBCC0B71ECDE0F600B8522C /* PastelGradient.swift in Sources */,
 				4CADB8DC1EC852F700873CC9 /* PastelView.swift in Sources */,
 			);
