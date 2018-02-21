@@ -18,7 +18,8 @@ public protocol PastelLabelable {
 open class PastelLabel: PastelView, PastelLabelable {
     private let label = UILabel()
     
-    // PastelLabelabel
+    //MARK: - PastelLabelable
+
     open var text: String? {
         didSet {
             label.text = text

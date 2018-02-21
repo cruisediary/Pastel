@@ -22,14 +22,16 @@ class ViewController: UIViewController {
 
         let pastelView = PastelView(frame: view.bounds)
 
-        // Custom Direction
+        //MARK: -  Custom Direction
+
         pastelView.startPastelPoint = .bottomLeft
         pastelView.endPastelPoint = .topRight
 
-        // Custom Duration
+        //MARK: -  Custom Duration
+        
         pastelView.animationDuration = 3.0
 
-        // Custom Color
+        //MARK: -  Custom Color
 
         pastelView.setColors([UIColor(red: 156/255, green: 39/255, blue: 176/255, alpha: 1.0),
                               UIColor(red: 255/255, green: 64/255, blue: 129/255, alpha: 1.0),
@@ -41,7 +43,6 @@ class ViewController: UIViewController {
 
         pastelView.startAnimation()
         view.insertSubview(pastelView, at: 0)
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
 }
