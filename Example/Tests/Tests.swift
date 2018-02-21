@@ -19,7 +19,7 @@ class TableOfContentsSpec: QuickSpec {
             it("will eventually fail") {
                 expect("time").toEventually( equal("done") )
             }
-            
+
             context("these will pass") {
 
                 it("can do maths") {
