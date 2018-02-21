@@ -15,7 +15,8 @@ open class PastelView: UIView {
         static let key = "ColorChange"
     }
     
-    // Custom Direction
+    //MARK: - Custom Direction
+
     open var startPoint: CGPoint = PastelPoint.topRight.point
     open var endPoint: CGPoint = PastelPoint.bottomLeft.point
     
@@ -31,7 +32,8 @@ open class PastelView: UIView {
         }
     }
     
-    // Custom Duration
+    //MARK: - Custom Duration
+
     open var animationDuration: TimeInterval = 5.0
     
     fileprivate let gradient = CAGradientLayer()
@@ -43,13 +45,6 @@ open class PastelView: UIView {
                              UIColor(red: 32/255, green: 158/255, blue: 255/255, alpha: 1.0),
                              UIColor(red: 90/255, green: 120/255, blue: 127/255, alpha: 1.0),
                              UIColor(red: 58/255, green: 255/255, blue: 217/255, alpha: 1.0)]
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
