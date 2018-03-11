@@ -14,6 +14,8 @@
 		4CADB8DC1EC852F700873CC9 /* PastelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CADB8D81EC852F700873CC9 /* PastelView.swift */; };
 		4CADB8DD1EC852F700873CC9 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 4CADB8DA1EC852F700873CC9 /* .gitkeep */; };
 		4CBCC0B71ECDE0F600B8522C /* PastelGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBCC0B61ECDE0F600B8522C /* PastelGradient.swift */; };
+		50FD0037201FD1C90076A8B6 /* PastelPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FD0035201FD1C90076A8B6 /* PastelPoint.swift */; };
+		50FD0038201FD1C90076A8B6 /* PastelLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FD0036201FD1C90076A8B6 /* PastelLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +39,8 @@
 		4CADB8D81EC852F700873CC9 /* PastelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastelView.swift; sourceTree = "<group>"; };
 		4CADB8DA1EC852F700873CC9 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		4CBCC0B61ECDE0F600B8522C /* PastelGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastelGradient.swift; sourceTree = "<group>"; };
+		50FD0035201FD1C90076A8B6 /* PastelPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastelPoint.swift; sourceTree = "<group>"; };
+		50FD0036201FD1C90076A8B6 /* PastelLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastelLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,10 +83,10 @@
 		4C8BD1BE1EC851DA00E0BACF /* Pastel */ = {
 			isa = PBXGroup;
 			children = (
-				4CADB8D61EC852F700873CC9 /* Classes */,
 				4CADB8D91EC852F700873CC9 /* Assets */,
-				4C8BD1BF1EC851DA00E0BACF /* Pastel.h */,
+				4CADB8D61EC852F700873CC9 /* Classes */,
 				4C8BD1C01EC851DA00E0BACF /* Info.plist */,
+				4C8BD1BF1EC851DA00E0BACF /* Pastel.h */,
 			);
 			path = Pastel;
 			sourceTree = "<group>";
@@ -90,8 +94,8 @@
 		4C8BD1C91EC851DA00E0BACF /* PastelTests */ = {
 			isa = PBXGroup;
 			children = (
-				4C8BD1CA1EC851DA00E0BACF /* PastelTests.swift */,
 				4C8BD1CC1EC851DA00E0BACF /* Info.plist */,
+				4C8BD1CA1EC851DA00E0BACF /* PastelTests.swift */,
 			);
 			path = PastelTests;
 			sourceTree = "<group>";
@@ -100,8 +104,10 @@
 			isa = PBXGroup;
 			children = (
 				4CADB8D71EC852F700873CC9 /* .gitkeep */,
-				4CADB8D81EC852F700873CC9 /* PastelView.swift */,
 				4CBCC0B61ECDE0F600B8522C /* PastelGradient.swift */,
+				50FD0036201FD1C90076A8B6 /* PastelLabel.swift */,
+				50FD0035201FD1C90076A8B6 /* PastelPoint.swift */,
+				4CADB8D81EC852F700873CC9 /* PastelView.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -171,15 +177,17 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = Cruz;
 				TargetAttributes = {
 					4C8BD1BB1EC851DA00E0BACF = {
 						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					4C8BD1C41EC851DA00E0BACF = {
 						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -226,6 +234,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50FD0037201FD1C90076A8B6 /* PastelPoint.swift in Sources */,
+				50FD0038201FD1C90076A8B6 /* PastelLabel.swift in Sources */,
 				4CBCC0B71ECDE0F600B8522C /* PastelGradient.swift in Sources */,
 				4CADB8DC1EC852F700873CC9 /* PastelView.swift in Sources */,
 			);
@@ -260,7 +270,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -268,7 +280,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -292,7 +308,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -314,7 +330,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -322,7 +340,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -340,7 +362,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -365,7 +387,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Cruz.Pastel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -383,7 +406,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Cruz.Pastel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -395,7 +419,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Cruz.PastelTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -407,7 +432,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Cruz.PastelTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

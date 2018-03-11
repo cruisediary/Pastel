@@ -1,14 +1,21 @@
+platform :ios, '10.0'
 use_frameworks!
+inhibit_all_warnings!
+
+def test_pods
+pod 'FBSnapshotTestCase'
+  pod 'Nimble-Snapshots', '~> 6.3.0'
+  pod 'Nimble', '~> 7.0'
+  pod 'Quick', '~> 1.2'
+
+end
 
 target 'Pastel_Example' do
   pod 'Pastel', :path => '../'
 
   target 'Pastel_Tests' do
     inherit! :search_paths
+    test_pods
 
-    pod 'Quick', '~> 1.0.0'
-  pod 'Nimble', '~> 5.1.1'
-  pod 'FBSnapshotTestCase'
-  pod 'Nimble-Snapshots'
   end
 end
