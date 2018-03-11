@@ -47,7 +47,7 @@ override func viewDidLoad() {
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
-Pastel is written in Swift 4. iOS 10.0+ Required
+Pastel is written in Swift 4. iOS 8.0+ Required
 
 ## Installation
 
