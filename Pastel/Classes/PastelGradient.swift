@@ -40,7 +40,7 @@ import UIKit
     case everlastingSky
     case happyFisher
     
-    func colors() -> [UIColor] {
+    public func colors() -> [UIColor] {
         switch self {
         case .warmFlame:
             return [#colorLiteral(red: 1, green: 0.6039215686, blue: 0.6196078431, alpha: 1), #colorLiteral(red: 0.9803921569, green: 0.8156862745, blue: 0.768627451, alpha: 1)]
