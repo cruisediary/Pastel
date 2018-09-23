@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Pastel'
-  s.version          = '0.5.0'
+  s.version          = '0.5.1'
   s.summary          = 'Instagram like gradient background animation'
   s.swift_version    = '4.2'
 
