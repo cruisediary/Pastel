@@ -5,7 +5,7 @@ PODS:
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
   - Nimble (7.3.1)
-  - Pastel (0.5.0)
+  - Pastel (0.5.1)
   - Quick (1.3.2)
 
 DEPENDENCIES:
@@ -27,7 +27,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
   Nimble: 04f732da099ea4d153122aec8c2a88fd0c7219ae
-  Pastel: be3ff2b241fec4b53fa4414861545abe0901e189
+  Pastel: 64859011b6c472c685b5d01f103f7b28b06deaa4
   Quick: 2623cb30d7a7f41ca62f684f679586558f483d46
 
 PODFILE CHECKSUM: 721b0e7e917b4fce095b650311c7bd1bd58dda68
