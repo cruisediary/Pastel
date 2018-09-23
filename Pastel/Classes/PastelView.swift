@@ -103,7 +103,7 @@ open class PastelView: UIView {
         let animation = CABasicAnimation(keyPath: Animation.keyPath)
         animation.duration = animationDuration
         animation.toValue = currentGradientSet()
-        animation.fillMode = .forwards
+        animation.fillMode = kCAFillModeForwards
         animation.isRemovedOnCompletion = false
         animation.delegate = self
         gradient.add(animation, forKey: Animation.key)
