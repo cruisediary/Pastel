@@ -60,7 +60,7 @@ pod "Pastel"
 
 ### Carthage
 ```
-github "cruisediary/Pastel" ~> 0.4.0
+github "cruisediary/Pastel" ~> 0.5.0
 ```
 
 ## Example
