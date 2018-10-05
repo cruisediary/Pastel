@@ -10,7 +10,6 @@
 		4C8BD1C61EC851DA00E0BACF /* Pastel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C8BD1BC1EC851DA00E0BACF /* Pastel.framework */; };
 		4C8BD1CB1EC851DA00E0BACF /* PastelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8BD1CA1EC851DA00E0BACF /* PastelTests.swift */; };
 		4C8BD1CD1EC851DA00E0BACF /* Pastel.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C8BD1BF1EC851DA00E0BACF /* Pastel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4CADB8DB1EC852F700873CC9 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 4CADB8D71EC852F700873CC9 /* .gitkeep */; };
 		4CADB8DC1EC852F700873CC9 /* PastelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CADB8D81EC852F700873CC9 /* PastelView.swift */; };
 		4CADB8DD1EC852F700873CC9 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 4CADB8DA1EC852F700873CC9 /* .gitkeep */; };
 		4CBCC0B71ECDE0F600B8522C /* PastelGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBCC0B61ECDE0F600B8522C /* PastelGradient.swift */; };
@@ -35,7 +34,6 @@
 		4C8BD1C51EC851DA00E0BACF /* PastelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PastelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C8BD1CA1EC851DA00E0BACF /* PastelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastelTests.swift; sourceTree = "<group>"; };
 		4C8BD1CC1EC851DA00E0BACF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4CADB8D71EC852F700873CC9 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		4CADB8D81EC852F700873CC9 /* PastelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastelView.swift; sourceTree = "<group>"; };
 		4CADB8DA1EC852F700873CC9 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		4CBCC0B61ECDE0F600B8522C /* PastelGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastelGradient.swift; sourceTree = "<group>"; };
@@ -103,7 +101,6 @@
 		4CADB8D61EC852F700873CC9 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				4CADB8D71EC852F700873CC9 /* .gitkeep */,
 				4CBCC0B61ECDE0F600B8522C /* PastelGradient.swift */,
 				50FD0036201FD1C90076A8B6 /* PastelLabel.swift */,
 				50FD0035201FD1C90076A8B6 /* PastelPoint.swift */,
@@ -215,7 +212,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CADB8DB1EC852F700873CC9 /* .gitkeep in Resources */,
 				4CADB8DD1EC852F700873CC9 /* .gitkeep in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,7 +386,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Cruz.Pastel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
@@ -410,7 +406,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Cruz.Pastel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
@@ -423,7 +419,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Cruz.PastelTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
@@ -436,7 +432,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Cruz.PastelTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
