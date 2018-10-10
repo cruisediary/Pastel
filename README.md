@@ -1,6 +1,7 @@
 # Pastel
 🎨 Gradient animation effect like Instagram
 
+[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 ![Swift](https://img.shields.io/badge/Swift-4.2-orange.svg)
 [![CI Status](http://img.shields.io/travis/cruisediary/Pastel.svg?style=flat)](https://travis-ci.org/cruisediary/Pastel)
 [![Version](https://img.shields.io/cocoapods/v/Pastel.svg?style=flat)](http://cocoapods.org/pods/Pastel)
@@ -65,6 +66,10 @@ github "cruisediary/Pastel" ~> 0.5.1
 
 ## Example
 - [Passcode](https://github.com/cruisediary/Passcode): A simple Passcode application using RxSwift, ReactorKit, IGListKit with Pastel
+
+## Awesome
+* [awesome-swift](https://github.com/matteocrippa/awesome-swift) - A collaborative list of awesome Swift libraries and resources. Feel free to contribute!
+* [awesome-gradient](https://github.com/cruisediary/awesome-gradient) - 🌈 A curated list of awesome Gradient frameworks, libraries and software and resources
 
 ## Author
 
