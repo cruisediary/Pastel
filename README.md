@@ -75,6 +75,10 @@ github "cruisediary/Pastel" ~> 0.5.1
 
 cruz, cruzdiary@gmail.com
 
+## Thanks
+
+Many thanks to [**the contributors**](https://github.com/cruisediary/Pastel/graphs/contributors) of this project.
+
 ## License
 
 Pastel is available under the MIT license. See the LICENSE file for more info.
