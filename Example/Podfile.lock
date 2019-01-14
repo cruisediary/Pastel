@@ -15,7 +15,7 @@ DEPENDENCIES:
   - Quick (~> 1.3.2)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - FBSnapshotTestCase
     - Nimble
     - Quick
@@ -32,4 +32,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 721b0e7e917b4fce095b650311c7bd1bd58dda68
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.5.0

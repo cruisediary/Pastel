@@ -84,7 +84,10 @@ open class PastelView: UIView {
         return [colors[currentGradient % colors.count].cgColor,
                 colors[(currentGradient + 1) % colors.count].cgColor]
     }
-    
+    public func vivek()
+    {
+      print(self.colors)
+  }
     public func setColors(_ colors: [UIColor]) {
         guard colors.count > 0 else { return }
         self.colors = colors
