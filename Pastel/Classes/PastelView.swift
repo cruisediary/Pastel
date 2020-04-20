@@ -35,6 +35,7 @@ open class PastelView: UIView {
     //MARK: - Custom Duration
 
     open var animationDuration: TimeInterval = 5.0
+    open var loop: Bool = true
     
     fileprivate let gradient = CAGradientLayer()
     private var currentGradient: Int = 0
@@ -120,7 +121,10 @@ extension PastelView: CAAnimationDelegate {
     public func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         if flag {
             gradient.colors = currentGradientSet()
-            animateGradient()
+            if loop {
+                animateGradient()
+            }
+            
         }
     }
 }
