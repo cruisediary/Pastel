@@ -60,11 +60,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4C8BD1B21EC851DA00E0BACF = {
+		16E1E7EE27597CE00036BEF1 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				4C8BD1BE1EC851DA00E0BACF /* Pastel */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		16E1E7EF27597CE70036BEF1 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
 				4C8BD1C91EC851DA00E0BACF /* PastelTests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		4C8BD1B21EC851DA00E0BACF = {
+			isa = PBXGroup;
+			children = (
+				16E1E7EE27597CE00036BEF1 /* Sources */,
+				16E1E7EF27597CE70036BEF1 /* Tests */,
 				4C8BD1BD1EC851DA00E0BACF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -386,7 +402,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Pastel/Info.plist;
+				INFOPLIST_FILE = Sources/Pastel/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -405,7 +421,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Pastel/Info.plist;
+				INFOPLIST_FILE = Sources/Pastel/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
