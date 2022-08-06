@@ -13,8 +13,7 @@ let package = Package(
     targets: [
         .target(
             name: "Pastel",
-            dependencies: [],
-            path: "Pastel"
+            dependencies: []
         )
     ]
 )
