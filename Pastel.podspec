@@ -30,11 +30,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
   s.tvos.deployment_target = "10.0"
 
-  s.source_files = 'Pastel/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'Pastel' => ['Pastel/Assets/*.png']
-  # }
+  s.source_files = 'Sources/**/*'
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
