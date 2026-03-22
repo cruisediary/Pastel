@@ -1,0 +1,12 @@
+{
+  "": {
+    "swift-dependencies": "/Users/cruz/Documents/Github/Pastel/.build/arm64-apple-macosx/debug/PastelPackageTests.build/master.swiftdeps"
+  },
+  "/Users/cruz/Documents/Github/Pastel/.build/arm64-apple-macosx/debug/PastelPackageTests.derived/runner.swift": {
+    "dependencies": "/Users/cruz/Documents/Github/Pastel/.build/arm64-apple-macosx/debug/PastelPackageTests.build/runner.d",
+    "object": "/Users/cruz/Documents/Github/Pastel/.build/arm64-apple-macosx/debug/PastelPackageTests.build/runner.swift.o",
+    "swiftmodule": "/Users/cruz/Documents/Github/Pastel/.build/arm64-apple-macosx/debug/PastelPackageTests.build/runner~partial.swiftmodule",
+    "swift-dependencies": "/Users/cruz/Documents/Github/Pastel/.build/arm64-apple-macosx/debug/PastelPackageTests.build/runner.swiftdeps",
+    "diagnostics": "/Users/cruz/Documents/Github/Pastel/.build/arm64-apple-macosx/debug/PastelPackageTests.build/runner.dia"
+  }
+}
