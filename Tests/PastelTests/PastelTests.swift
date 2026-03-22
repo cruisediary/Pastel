@@ -37,11 +37,18 @@ class PastelTests: XCTestCase {
         XCTAssertEqual(gradientLayers.count, 1, "Expected exactly 1 CAGradientLayer, got \(gradientLayers.count)")
     }
     
+    func testTimingCurveMapsToCA() {
+        XCTAssertEqual(PastelTimingCurve.linear.caTimingFunction, .linear)
+        XCTAssertEqual(PastelTimingCurve.easeIn.caTimingFunction, .easeIn)
+        XCTAssertEqual(PastelTimingCurve.easeOut.caTimingFunction, .easeOut)
+        XCTAssertEqual(PastelTimingCurve.easeInOut.caTimingFunction, .easeInEaseOut)
+    }
+
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
             // Put the code you want to measure the time of here.
         }
     }
-    
+
 }
