@@ -7,7 +7,7 @@ import SwiftUI
 @available(iOS 16.0, *)
 public struct PastelGradientView: View {
 
-    private let state: PastelAnimationState
+    @ObservedObject private var state: PastelAnimationState
 
     @State private var currentIndex: Int = 0
     @State private var nextIndex: Int = 1
@@ -75,7 +75,13 @@ public struct PastelGradientView: View {
             : currentIndex == 0
         if cycleComplete {
             cycleCount += 1
-            if state.autoreverses { isReversed.toggle() }
+            if state.autoreverses {
+                isReversed.toggle()
+                // Recalculate nextIndex for the new direction without re-advancing currentIndex
+                nextIndex = isReversed
+                    ? (currentIndex - 1 + colors.count) % colors.count
+                    : (currentIndex + 1) % colors.count
+            }
         }
 
         lastTransitionDate = .now
