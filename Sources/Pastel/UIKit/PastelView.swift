@@ -69,7 +69,9 @@ open class PastelView: UIView {
     }
 
     /// Begins the animated gradient transition. Safe to call multiple times; each call
-    /// resets and restarts the animation without accumulating additional sublayers.
+    /// stops any in-progress animation and restarts it without accumulating additional
+    /// sublayers. The gradient color sequence continues from its current position — the
+    /// internal index counter is not reset to zero.
     public func startAnimation() {
         gradient.removeAllAnimations()
         setup()

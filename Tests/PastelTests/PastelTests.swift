@@ -22,7 +22,8 @@ class PastelTests: XCTestCase {
     }
     
     func testPastelPointPublicAccess() {
-        // point must be accessible from outside the module
+        // Validates that topRight maps to the correct CGPoint.
+        // Note: @testable import bypasses access control; value correctness is what's verified here.
         let pt = PastelPoint.topRight.point
         XCTAssertEqual(pt, CGPoint(x: 1.0, y: 0.0))
     }
