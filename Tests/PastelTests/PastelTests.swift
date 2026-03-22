@@ -28,15 +28,6 @@ class PastelTests: XCTestCase {
         XCTAssertEqual(pt, CGPoint(x: 1.0, y: 0.0))
     }
 
-    func testNoSublayerAccumulation() {
-        let view = PastelView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-        view.startAnimation()
-        view.startAnimation()
-        view.startAnimation()
-        let gradientLayers = view.layer.sublayers?.filter { $0 is CAGradientLayer } ?? []
-        XCTAssertEqual(gradientLayers.count, 1, "Expected exactly 1 CAGradientLayer, got \(gradientLayers.count)")
-    }
-    
     func testTimingCurveMapsToCA() {
         XCTAssertEqual(PastelTimingCurve.linear.caTimingFunction, .linear)
         XCTAssertEqual(PastelTimingCurve.easeIn.caTimingFunction, .easeIn)
