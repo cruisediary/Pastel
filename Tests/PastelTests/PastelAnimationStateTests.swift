@@ -11,7 +11,10 @@ class PastelAnimationStateTests: XCTestCase {
         XCTAssertEqual(state.endPoint, CGPoint(x: 0, y: 1))
     }
 
-    func testPreconditionMinTwoColors() {
+    func testMinimumTwoColorsAccepted() {
+        // Verifies that exactly 2 colors are accepted without precondition failure.
+        // Note: testing that fewer than 2 colors triggers a precondition crash
+        // requires a custom XCTest precondition handler and is out of scope here.
         let state = PastelAnimationState(colors: [.red, .blue])
         XCTAssertEqual(state.colors.count, 2)
     }
