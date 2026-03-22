@@ -19,7 +19,8 @@ extension View {
     /// Applies an animated gradient background using custom colors.
     /// - Precondition: `colors.count >= 2`.
     public func pastelBackground(colors: [UIColor], duration: TimeInterval = 5.0) -> some View {
-        modifier(PastelGradientModifier(state: PastelAnimationState(colors: colors, duration: duration)))
+        precondition(colors.count >= 2, "pastelBackground requires at least 2 colors.")
+        return modifier(PastelGradientModifier(state: PastelAnimationState(colors: colors, duration: duration)))
     }
 
     /// Applies an animated gradient background driven by a shared state object.
