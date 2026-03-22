@@ -24,16 +24,12 @@ open class PastelView: UIView {
 
     /// A convenience setter for `startPoint` using a `PastelPoint` enum value.
     open var startPastelPoint = PastelPoint.topRight {
-        didSet {
-            startPoint = startPastelPoint.point
-        }
+        didSet { startPoint = startPastelPoint.point }
     }
 
     /// A convenience setter for `endPoint` using a `PastelPoint` enum value.
     open var endPastelPoint = PastelPoint.bottomLeft {
-        didSet {
-            endPoint = endPastelPoint.point
-        }
+        didSet { endPoint = endPastelPoint.point }
     }
 
     //MARK: - Custom Duration
@@ -48,14 +44,15 @@ open class PastelView: UIView {
     public var animationState: PastelAnimationState?
 
     fileprivate let gradient = CAGradientLayer()
-    private var currentGradient: Int = 0
-    private var colors: [UIColor] = [UIColor(red: 156/255, green: 39/255, blue: 176/255, alpha: 1.0),
-                             UIColor(red: 255/255, green: 64/255, blue: 129/255, alpha: 1.0),
-                             UIColor(red: 123/255, green: 31/255, blue: 162/255, alpha: 1.0),
-                             UIColor(red: 32/255, green: 76/255, blue: 255/255, alpha: 1.0),
-                             UIColor(red: 32/255, green: 158/255, blue: 255/255, alpha: 1.0),
-                             UIColor(red: 90/255, green: 120/255, blue: 127/255, alpha: 1.0),
-                             UIColor(red: 58/255, green: 255/255, blue: 217/255, alpha: 1.0)]
+    private var colors: [UIColor] = [
+        UIColor(red: 156/255, green: 39/255,  blue: 176/255, alpha: 1.0),
+        UIColor(red: 255/255, green: 64/255,  blue: 129/255, alpha: 1.0),
+        UIColor(red: 123/255, green: 31/255,  blue: 162/255, alpha: 1.0),
+        UIColor(red: 32/255,  green: 76/255,  blue: 255/255, alpha: 1.0),
+        UIColor(red: 32/255,  green: 158/255, blue: 255/255, alpha: 1.0),
+        UIColor(red: 90/255,  green: 120/255, blue: 127/255, alpha: 1.0),
+        UIColor(red: 58/255,  green: 255/255, blue: 217/255, alpha: 1.0),
+    ]
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -75,9 +72,7 @@ open class PastelView: UIView {
     }
 
     /// Begins the animated gradient transition. Safe to call multiple times; each call
-    /// stops any in-progress animation and restarts it without accumulating additional
-    /// sublayers. The gradient color sequence continues from its current position — the
-    /// internal index counter is not reset to zero.
+    /// stops any in-progress animation and restarts it without accumulating additional sublayers.
     public func startAnimation() {
         gradient.removeAllAnimations()
         setup()
@@ -91,24 +86,15 @@ open class PastelView: UIView {
 
         if let state = animationState {
             let stateColors = state.colors
-            gradient.colors = [
-                stateColors[currentGradient % stateColors.count].cgColor,
-                stateColors[(currentGradient + 1) % stateColors.count].cgColor
-            ]
+            gradient.colors = [stateColors[0].cgColor, stateColors[1].cgColor]
             gradient.startPoint = state.startPoint
             gradient.endPoint = state.endPoint
         } else {
-            gradient.colors = currentGradientSet()
+            gradient.colors = [colors[0].cgColor, colors[1].cgColor]
             gradient.startPoint = startPoint
             gradient.endPoint = endPoint
         }
         layer.insertSublayer(gradient, at: 0)
-    }
-
-    fileprivate func currentGradientSet() -> [CGColor] {
-        guard colors.count > 0 else { return [] }
-        return [colors[currentGradient % colors.count].cgColor,
-                colors[(currentGradient + 1) % colors.count].cgColor]
     }
 
     /// Replaces the gradient color palette with the provided colors.
@@ -136,31 +122,62 @@ open class PastelView: UIView {
     }
 
     private func animateGradient() {
-        currentGradient += 1
-        let animation = CABasicAnimation(keyPath: Animation.keyPath)
+        let activeColors: [UIColor]
+        let duration: TimeInterval
+        let timingCurve: PastelTimingCurve
+        let repeatBehavior: RepeatBehavior
+        let autoreverses: Bool
 
         if let state = animationState {
-            animation.duration = state.duration
-            animation.timingFunction = CAMediaTimingFunction(name: state.timingCurve.caTimingFunction)
-            switch state.repeatBehavior {
-            case .forever:      animation.repeatCount = .infinity
-            case .count(let n): animation.repeatCount = Float(n)
-            }
-            animation.autoreverses = state.autoreverses
-            // Use state.colors for the animated transition, cycling via currentGradient index
-            let stateColors = state.colors
-            animation.toValue = [
-                stateColors[currentGradient % stateColors.count].cgColor,
-                stateColors[(currentGradient + 1) % stateColors.count].cgColor
-            ]
+            activeColors   = state.colors
+            duration       = state.duration
+            timingCurve    = state.timingCurve
+            repeatBehavior = state.repeatBehavior
+            autoreverses   = state.autoreverses
         } else {
-            animation.duration = animationDuration
-            animation.toValue = currentGradientSet()
+            activeColors   = colors
+            duration       = animationDuration
+            timingCurve    = .linear
+            repeatBehavior = .forever
+            autoreverses   = false
         }
 
-        animation.fillMode = .forwards
+        // Build keyframe values: each step transitions from colors[n] to colors[n+1],
+        // with a wrap-around step back to colors[0] to close the loop seamlessly.
+        var values: [[CGColor]] = []
+        for i in 0 ..< activeColors.count {
+            values.append([
+                activeColors[i].cgColor,
+                activeColors[(i + 1) % activeColors.count].cgColor,
+            ])
+        }
+        values.append(values[0]) // wrap-around: keyTimes needs n+1 entries for n steps
+
+        // keyTimes: n+1 evenly-spaced values from 0.0 to 1.0
+        let keyTimes: [NSNumber] = (0 ... activeColors.count).map {
+            NSNumber(value: Double($0) / Double(activeColors.count))
+        }
+
+        // timingFunctions: one per segment (values.count - 1 = activeColors.count)
+        let timingFunctions = Array(
+            repeating: CAMediaTimingFunction(name: timingCurve.caTimingFunction),
+            count: activeColors.count
+        )
+
+        let animation = CAKeyframeAnimation(keyPath: Animation.keyPath)
+        animation.values                = values
+        animation.keyTimes              = keyTimes
+        animation.timingFunctions       = timingFunctions
+        animation.duration              = duration * Double(activeColors.count)
+        animation.autoreverses          = autoreverses
+        animation.fillMode              = .forwards
         animation.isRemovedOnCompletion = false
-        animation.delegate = self
+
+        switch repeatBehavior {
+        case .forever:      animation.repeatCount = .infinity
+        case .count(let n): animation.repeatCount = Float(n)
+        }
+
         gradient.add(animation, forKey: Animation.key)
     }
 
@@ -168,14 +185,5 @@ open class PastelView: UIView {
         super.removeFromSuperview()
         gradient.removeAllAnimations()
         gradient.removeFromSuperlayer()
-    }
-}
-
-extension PastelView: CAAnimationDelegate {
-    public func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
-        if flag {
-            gradient.colors = currentGradientSet()
-            animateGradient()
-        }
     }
 }
