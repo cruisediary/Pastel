@@ -98,7 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				4CADB8D91EC852F700873CC9 /* Assets */,
-				4CADB8D61EC852F700873CC9 /* Classes */,
+				4CADB8D61EC852F700873CC9 /* Core */,
+				4CADB8E01EC852F700873CC9 /* UIKit */,
 				4C8BD1C01EC851DA00E0BACF /* Info.plist */,
 				4C8BD1BF1EC851DA00E0BACF /* Pastel.h */,
 			);
@@ -114,15 +115,22 @@
 			path = PastelTests;
 			sourceTree = "<group>";
 		};
-		4CADB8D61EC852F700873CC9 /* Classes */ = {
+		4CADB8D61EC852F700873CC9 /* Core */ = {
 			isa = PBXGroup;
 			children = (
 				4CBCC0B61ECDE0F600B8522C /* PastelGradient.swift */,
-				50FD0036201FD1C90076A8B6 /* PastelLabel.swift */,
 				50FD0035201FD1C90076A8B6 /* PastelPoint.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		4CADB8E01EC852F700873CC9 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				50FD0036201FD1C90076A8B6 /* PastelLabel.swift */,
 				4CADB8D81EC852F700873CC9 /* PastelView.swift */,
 			);
-			path = Classes;
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 		4CADB8D91EC852F700873CC9 /* Assets */ = {
@@ -436,7 +444,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = PastelTests/Info.plist;
+				INFOPLIST_FILE = Tests/PastelTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Cruz.PastelTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -448,7 +456,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = PastelTests/Info.plist;
+				INFOPLIST_FILE = Tests/PastelTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Cruz.PastelTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
