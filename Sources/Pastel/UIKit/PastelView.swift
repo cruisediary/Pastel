@@ -41,6 +41,12 @@ open class PastelView: UIView {
     /// The duration of each individual gradient color-transition animation, in seconds. Defaults to `5.0`.
     open var animationDuration: TimeInterval = 5.0
 
+    /// Optional shared animation state. When set, overrides individual animation properties.
+    ///
+    /// State is read at ``startAnimation()`` call time. Mutating state while an animation
+    /// is running requires calling ``startAnimation()`` again to take effect.
+    public var animationState: PastelAnimationState?
+
     fileprivate let gradient = CAGradientLayer()
     private var currentGradient: Int = 0
     private var colors: [UIColor] = [UIColor(red: 156/255, green: 39/255, blue: 176/255, alpha: 1.0),
@@ -79,12 +85,19 @@ open class PastelView: UIView {
     }
 
     fileprivate func setup() {
-        gradient.removeFromSuperlayer()          // prevent accumulation on repeated calls
+        gradient.removeFromSuperlayer()
         gradient.frame = bounds
-        gradient.colors = currentGradientSet()
-        gradient.startPoint = startPoint
-        gradient.endPoint = endPoint
         gradient.drawsAsynchronously = true
+
+        if let state = animationState {
+            gradient.colors = state.colors.map { $0.cgColor }
+            gradient.startPoint = state.startPoint
+            gradient.endPoint = state.endPoint
+        } else {
+            gradient.colors = currentGradientSet()
+            gradient.startPoint = startPoint
+            gradient.endPoint = endPoint
+        }
         layer.insertSublayer(gradient, at: 0)
     }
 
@@ -121,8 +134,21 @@ open class PastelView: UIView {
     private func animateGradient() {
         currentGradient += 1
         let animation = CABasicAnimation(keyPath: Animation.keyPath)
-        animation.duration = animationDuration
-        animation.toValue = currentGradientSet()
+
+        if let state = animationState {
+            animation.duration = state.duration
+            animation.timingFunction = CAMediaTimingFunction(name: state.timingCurve.caTimingFunction)
+            switch state.repeatBehavior {
+            case .forever:      animation.repeatCount = .infinity
+            case .count(let n): animation.repeatCount = Float(n)
+            }
+            animation.autoreverses = state.autoreverses
+            animation.toValue = currentGradientSet()   // still uses the cycling index for UIKit
+        } else {
+            animation.duration = animationDuration
+            animation.toValue = currentGradientSet()
+        }
+
         animation.fillMode = .forwards
         animation.isRemovedOnCompletion = false
         animation.delegate = self
