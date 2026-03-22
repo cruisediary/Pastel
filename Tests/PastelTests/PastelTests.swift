@@ -21,9 +21,19 @@ class PastelTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testPastelPointPublicAccess() {
+        // point must be accessible from outside the module
+        let pt = PastelPoint.topRight.point
+        XCTAssertEqual(pt, CGPoint(x: 1.0, y: 0.0))
+    }
+
+    func testNoSublayerAccumulation() {
+        let view = PastelView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        view.startAnimation()
+        view.startAnimation()
+        view.startAnimation()
+        let gradientLayers = view.layer.sublayers?.filter { $0 is CAGradientLayer } ?? []
+        XCTAssertEqual(gradientLayers.count, 1, "Expected exactly 1 CAGradientLayer, got \(gradientLayers.count)")
     }
     
     func testPerformanceExample() {
