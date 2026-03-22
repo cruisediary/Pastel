@@ -90,7 +90,11 @@ open class PastelView: UIView {
         gradient.drawsAsynchronously = true
 
         if let state = animationState {
-            gradient.colors = state.colors.map { $0.cgColor }
+            let stateColors = state.colors
+            gradient.colors = [
+                stateColors[currentGradient % stateColors.count].cgColor,
+                stateColors[(currentGradient + 1) % stateColors.count].cgColor
+            ]
             gradient.startPoint = state.startPoint
             gradient.endPoint = state.endPoint
         } else {
@@ -125,7 +129,7 @@ open class PastelView: UIView {
         colors.append(color)
     }
 
-    /// - Warning: Deprecated. Use ``addColor(_:)`` instead.
+    /// Deprecated. Use ``addColor(_:)`` instead.
     @available(*, deprecated, renamed: "addColor(_:)")
     public func addcolor(_ color: UIColor) {
         addColor(color)
@@ -143,7 +147,12 @@ open class PastelView: UIView {
             case .count(let n): animation.repeatCount = Float(n)
             }
             animation.autoreverses = state.autoreverses
-            animation.toValue = currentGradientSet()   // still uses the cycling index for UIKit
+            // Use state.colors for the animated transition, cycling via currentGradient index
+            let stateColors = state.colors
+            animation.toValue = [
+                stateColors[currentGradient % stateColors.count].cgColor,
+                stateColors[(currentGradient + 1) % stateColors.count].cgColor
+            ]
         } else {
             animation.duration = animationDuration
             animation.toValue = currentGradientSet()
