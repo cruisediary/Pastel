@@ -44,9 +44,11 @@ class ViewController: UIViewController {
 
     private func setupLoginUI() {
         // Logo
-        let logoImage = UIImageView(image: UIImage(named: "Instagram Text Logo"))
-        logoImage.contentMode = .scaleAspectFit
-        logoImage.translatesAutoresizingMaskIntoConstraints = false
+        let logoView = PastelImageView(frame: .zero)
+        logoView.image = UIImage(named: "Instagram Text Logo")
+        logoView.setColors(PastelGradient.malibuBeach.colors())
+        logoView.startAnimation()
+        logoView.translatesAutoresizingMaskIntoConstraints = false
 
         // Username field
         styleTextField(usernameField, placeholder: "Username")
@@ -82,14 +84,14 @@ class ViewController: UIViewController {
         stack.spacing = 12
         stack.translatesAutoresizingMaskIntoConstraints = false
 
-        view.addSubview(logoImage)
+        view.addSubview(logoView)
         view.addSubview(stack)
 
         NSLayoutConstraint.activate([
-            logoImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            logoImage.bottomAnchor.constraint(equalTo: stack.topAnchor, constant: -48),
-            logoImage.widthAnchor.constraint(equalToConstant: 200),
-            logoImage.heightAnchor.constraint(equalToConstant: 80),
+            logoView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            logoView.bottomAnchor.constraint(equalTo: stack.topAnchor, constant: -48),
+            logoView.widthAnchor.constraint(equalToConstant: 200),
+            logoView.heightAnchor.constraint(equalToConstant: 80),
 
             stack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             stack.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 40),
