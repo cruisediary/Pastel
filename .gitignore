@@ -33,3 +33,7 @@ Carthage
 Pods/
 Example/Pods
 
+# Swift Package Manager
+.build/
+.swiftpm/
+
