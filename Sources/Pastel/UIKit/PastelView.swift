@@ -107,10 +107,15 @@ open class PastelView: UIView {
         setColors(gradient.colors())
     }
 
-    /// Appends a single color to the gradient palette.
-    /// - Parameter color: The `UIColor` to append.
+    /// Appends a color to the animation sequence.
+    public func addColor(_ color: UIColor) {
+        colors.append(color)
+    }
+
+    /// - Warning: Deprecated. Use ``addColor(_:)`` instead.
+    @available(*, deprecated, renamed: "addColor(_:)")
     public func addcolor(_ color: UIColor) {
-        self.colors.append(color)
+        addColor(color)
     }
 
     private func animateGradient() {
