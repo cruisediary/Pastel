@@ -1,75 +1,155 @@
 # Pastel
 🎨 Gradient animation effect like Instagram
 
-[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
-![Swift](https://img.shields.io/badge/Swift-5.0-orange.svg)
-[![CI Status](http://img.shields.io/travis/cruisediary/Pastel.svg?style=flat)](https://travis-ci.org/cruisediary/Pastel)
+![Swift](https://img.shields.io/badge/Swift-5.9-orange.svg)
 [![Version](https://img.shields.io/cocoapods/v/Pastel.svg?style=flat)](http://cocoapods.org/pods/Pastel)
 [![License](https://img.shields.io/cocoapods/l/Pastel.svg?style=flat)](http://cocoapods.org/pods/Pastel)
-[![Platform](https://img.shields.io/cocoapods/p/Pastel.svg?style=flat)](http://cocoapods.org/pods/Pastel)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Platform](https://img.shields.io/badge/platform-iOS%2016%2B-blue.svg)](https://developer.apple.com/ios/)
+[![SPM compatible](https://img.shields.io/badge/SPM-compatible-brightgreen.svg)](https://swift.org/package-manager/)
 
 ![pastel_01.gif](README/Pastel_01.gif)
 ![pastel_02.gif](README/Pastel_02.gif)
 ![pastel_03.gif](README/Pastel_03.gif)
 
-## Example
+## Requirements
+
+- iOS 16.0+
+- Swift 5.9+
+- Xcode 15+
+
+## Installation
+
+### Swift Package Manager
+
+Add Pastel to your `Package.swift`:
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/cruisediary/Pastel.git", from: "1.0.0")
+]
+```
+
+Or in Xcode: **File → Add Package Dependencies** and enter the repository URL.
+
+### CocoaPods
+
+```ruby
+pod 'Pastel', '~> 1.0.0'
+```
+
+## Usage
+
+### SwiftUI
+
+**Animated gradient background (preset)**
+
+```swift
+import SwiftUI
+import Pastel
+
+struct ContentView: View {
+    var body: some View {
+        Text("Hello")
+            .pastelBackground(.instagram)
+    }
+}
+```
+
+**Animated gradient background (custom colors)**
+
+```swift
+Text("Hello")
+    .pastelBackground(colors: [
+        UIColor(red: 156/255, green: 39/255, blue: 176/255, alpha: 1),
+        UIColor(red: 255/255, green: 64/255, blue: 129/255, alpha: 1),
+        UIColor(red: 32/255, green: 76/255, blue: 255/255, alpha: 1)
+    ], duration: 3.0)
+```
+
+**Animated gradient view**
+
+```swift
+PastelGradientView(gradient: .sunset, duration: 4.0)
+    .ignoresSafeArea()
+```
+
+**Animated gradient text**
+
+```swift
+PastelText("Pastel", font: .largeTitle, gradient: .instagram)
+```
+
+**Shared state (coordinate multiple views)**
+
+```swift
+let state = PastelAnimationState(
+    colors: [.purple, .pink, .blue],
+    duration: 3.0,
+    timingCurve: .easeInOut,
+    repeatBehavior: .count(5),
+    autoreverses: true
+)
+
+PastelGradientView(state: state)
+PastelText("Hello", state: state)
+```
+
+### UIKit
+
+**Basic usage**
+
 ```swift
 override func viewDidLoad() {
     super.viewDidLoad()
 
     let pastelView = PastelView(frame: view.bounds)
 
-    // Custom Direction
+    // Direction
     pastelView.startPastelPoint = .bottomLeft
     pastelView.endPastelPoint = .topRight
 
-    // Custom Duration
+    // Duration
     pastelView.animationDuration = 3.0
 
-    // Custom Color
-    pastelView.setColors([UIColor(red: 156/255, green: 39/255, blue: 176/255, alpha: 1.0),
-                          UIColor(red: 255/255, green: 64/255, blue: 129/255, alpha: 1.0),
-                          UIColor(red: 123/255, green: 31/255, blue: 162/255, alpha: 1.0),
-                          UIColor(red: 32/255, green: 76/255, blue: 255/255, alpha: 1.0),
-                          UIColor(red: 32/255, green: 158/255, blue: 255/255, alpha: 1.0),
-                          UIColor(red: 90/255, green: 120/255, blue: 127/255, alpha: 1.0),
-                          UIColor(red: 58/255, green: 255/255, blue: 217/255, alpha: 1.0)])
+    // Colors
+    pastelView.setColors([
+        UIColor(red: 156/255, green: 39/255, blue: 176/255, alpha: 1),
+        UIColor(red: 255/255, green: 64/255, blue: 129/255, alpha: 1),
+        UIColor(red: 123/255, green: 31/255, blue: 162/255, alpha: 1),
+        UIColor(red: 32/255, green: 76/255, blue: 255/255, alpha: 1),
+        UIColor(red: 58/255, green: 255/255, blue: 217/255, alpha: 1)
+    ])
 
     pastelView.startAnimation()
     view.insertSubview(pastelView, at: 0)
 }
 ```
 
-## 🎨 Customize Gradient Colors
-#### Designed by Alexander Zaytsev, https://dribbble.com/anwaltzzz
+**Shared state with UIKit**
+
+```swift
+let state = PastelAnimationState(
+    colors: [.purple, .pink, .blue],
+    duration: 3.0,
+    timingCurve: .easeInOut
+)
+
+let pastelView = PastelView(frame: view.bounds)
+pastelView.animationState = state
+pastelView.startAnimation()
+view.insertSubview(pastelView, at: 0)
+```
+
+## 🎨 Gradient Presets
+
+30 built-in presets available via `PastelGradient`.
+
+#### Designed by Alexander Zaytsev — https://dribbble.com/anwaltzzz
 ![Gradient.png](README/Gradient.png)
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+## Example Project
 
-## Requirements
-Pastel is written in Swift 3+. iOS 8.0+ Required
-
-## Installation
-
-Pastel is available through [CocoaPods](http://cocoapods.org) or [Carthage](https://github.com/Carthage/Carthage).
-
-### Cocoapods
-```ruby
-pod "Pastel"
-```
-
-### Carthage
-```
-github "cruisediary/Pastel" ~> 0.6.0
-```
-
-## Example
-- [Passcode](https://github.com/cruisediary/Passcode): A simple Passcode application using RxSwift, ReactorKit, IGListKit with Pastel
-
-## Awesome
-* [awesome-swift](https://github.com/matteocrippa/awesome-swift) - A collaborative list of awesome Swift libraries and resources. Feel free to contribute!
-* [awesome-gradient](https://github.com/cruisediary/awesome-gradient) - 🌈 A curated list of awesome Gradient frameworks, libraries and software and resources
+Clone the repo and open `Example/Pastel.xcodeproj`. No additional setup needed — Pastel is linked via SPM automatically.
 
 ## Author
 
